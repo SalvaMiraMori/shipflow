@@ -1,0 +1,30 @@
+# Build output
+bin/
+obj/
+artifacts/
+TestResults/
+*.trx
+coverage*/
+
+# IDEs
+.vs/
+.vscode/*
+!.vscode/extensions.json
+.idea/
+*.user
+*.suo
+
+# Secrets & local config
+appsettings.*.local.json
+*.env
+.env*
+!.env.example
+
+# Node / Angular (Phase 5)
+node_modules/
+dist/
+.angular/
+
+# Infra
+*.tfstate*
+.azure/
