@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <Description>DDD building blocks: entities, aggregates, strongly-typed ids, value objects, enumerations, domain events, error templates and FluentValidation helpers.</Description>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="ErrorOr" />
+    <PackageReference Include="FluentValidation" />
+  </ItemGroup>
+
+</Project>

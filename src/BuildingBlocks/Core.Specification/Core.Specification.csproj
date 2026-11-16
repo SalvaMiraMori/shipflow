@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <Description>Persistence-agnostic specification pattern (fork of Ardalis.Specification). No EF Core dependency, so Domain projects can reference it.</Description>
+    <!-- Vendored fork of Ardalis.Specification: keep upstream code style so diffs against upstream stay readable. -->
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <EnforceCodeStyleInBuild>false</EnforceCodeStyleInBuild>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <InternalsVisibleTo Include="Core.SpecificationEF" />
+  </ItemGroup>
+
+</Project>

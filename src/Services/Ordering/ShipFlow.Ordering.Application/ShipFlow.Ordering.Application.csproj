@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\BuildingBlocks\Core.Application\Core.Application.csproj" />
+    <ProjectReference Include="..\ShipFlow.Ordering.Domain\ShipFlow.Ordering.Domain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <InternalsVisibleTo Include="ShipFlow.Ordering.Application.Tests" />
+  </ItemGroup>
+
+</Project>

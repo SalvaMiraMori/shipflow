@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <RootNamespace>ShipFlow.Ordering.Domain</RootNamespace>
+  </PropertyGroup>
+
+  <!-- Domain stays free of EF Core / ASP.NET: Core.Specification has no EF dependency. -->
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\BuildingBlocks\Core.Domain\Core.Domain.csproj" />
+    <ProjectReference Include="..\..\..\BuildingBlocks\Core.Specification\Core.Specification.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <Description>EF Core implementations of the Core.Application abstractions: generic specification repository and unit of work with auditing, soft delete and domain event dispatching.</Description>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Core.Application\Core.Application.csproj" />
+    <ProjectReference Include="..\Core.SpecificationEF\Core.SpecificationEF.csproj" />
+  </ItemGroup>
+
+</Project>

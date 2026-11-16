@@ -14,3 +14,6 @@ Context → Decision → Consequences.
 ## Consequences
 Decisions are reviewable in PRs and traceable in git history. Planned ADRs: Aspire for local orchestration,
 Container Apps over AKS for production, transactional outbox, MassTransit v8 vs native Service Bus SDK.
+
+## Index
+- [0002 — Service layout and Core building blocks](0002-service-layout-and-core-building-blocks.md)

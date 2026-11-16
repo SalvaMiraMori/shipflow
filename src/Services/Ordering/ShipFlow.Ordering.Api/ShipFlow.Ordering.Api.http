@@ -1,0 +1,23 @@
+@api = https://localhost:7101
+
+### Place an order (201 + Location header)
+POST {{api}}/api/orders
+Content-Type: application/json
+
+{
+  "customerId": "6f9619ff-8b86-d011-b42d-00c04fc964ff",
+  "shippingAddress": { "street": "Carrer de Balmes 1", "city": "Barcelona", "postalCode": "08007", "countryCode": "ES" },
+  "lines": [
+    { "productId": "0b7a3f8e-1d2c-4e5f-9a8b-7c6d5e4f3a2b", "quantity": 2, "unitPrice": 19.99, "currency": "EUR" },
+    { "productId": "0b7a3f8e-1d2c-4e5f-9a8b-7c6d5e4f3a2b", "quantity": 1, "unitPrice": 19.99, "currency": "EUR" }
+  ]
+}
+
+### List orders
+GET {{api}}/api/orders?page=1&pageSize=10&status=Placed
+
+### Invalid order (400 Problem Details)
+POST {{api}}/api/orders
+Content-Type: application/json
+
+{ "customerId": "00000000-0000-0000-0000-000000000000", "shippingAddress": { "street": "", "city": "", "postalCode": "", "countryCode": "Spain" }, "lines": [] }

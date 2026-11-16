@@ -1,6 +1,6 @@
 # 001 — Place order (Ordering API)
 
-- **Status:** Draft
+- **Status:** Implemented — tick the criteria once `dotnet test` is green locally
 - **Phase:** 1
 - **Service(s):** Ordering
 
@@ -9,7 +9,7 @@ A customer needs to place an order for one or more products and get back an orde
 This is the first vertical slice and the entry point of the whole order → shipment flow.
 
 ## Scope
-**In:** `POST /orders`, `GET /orders/{id}`; `Order` aggregate with `OrderLine`s; persistence in SQL Server
+**In:** `POST /api/orders`, `GET /api/orders/{id}`, `GET /api/orders` (paged, filter by customer/status), `POST /api/orders/{id}/cancel`; `Order` aggregate with `OrderLine`s; persistence in SQL Server
 (Azure SQL in the cloud); validation; Problem Details errors.
 **Out:** payment, stock checks (Phase 2/3), authentication (Phase 5).
 
@@ -40,5 +40,14 @@ This is the first vertical slice and the entry point of the whole order → ship
 | 5 | integration (Testcontainers SQL) | POST then GET | round-trip equal |
 | 6 | integration | invalid payload | 400 Problem Details |
 
-## Open questions
-- Use strongly-typed ids (`OrderId : record struct`) with an EF value converter? (Proposed: yes.)
+## Decisions taken during implementation
+- Strongly-typed ids (`OrderId`, `CustomerId`, `ProductId`, `OrderLineId`) as `EntityId`/`AggregateRootId` classes with EF value converters.
+- The same product twice with **different** unit prices is rejected (`Order.Lines.ConflictingUnitPrice`) instead of guessing which price wins.
+- Domain rules return `ErrorOr` errors instead of throwing exceptions (EcoGreen pattern); the controller maps them to Problem Details.
+- Routes follow the `api/[controller]` convention of the base `ApiController`.
+
+## Implementation map
+| Test case | Test |
+|---|---|
+| 1–4 | `tests/Services/Ordering/ShipFlow.Ordering.Domain.Tests/Orders/OrderTests.cs` |
+| 5–6 | `tests/Services/Ordering/ShipFlow.Ordering.Api.IntegrationTests/OrdersEndpointsTests.cs` (Testcontainers SQL Server) |
