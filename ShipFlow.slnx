@@ -7,11 +7,41 @@
     <File Path="README.md" />
     <File Path="CLAUDE.md" />
   </Folder>
-  <Folder Name="/src/">
+  <Folder Name="/src/" />
+  <Folder Name="/src/Aspire/">
     <Project Path="src/AppHost/ShipFlow.AppHost.csproj" />
     <Project Path="src/ServiceDefaults/ShipFlow.ServiceDefaults.csproj" />
   </Folder>
-  <Folder Name="/tests/">
+  <Folder Name="/src/BuildingBlocks/">
+    <Project Path="src/BuildingBlocks/Core.Domain/Core.Domain.csproj" />
+    <Project Path="src/BuildingBlocks/Core.Specification/Core.Specification.csproj" />
+    <Project Path="src/BuildingBlocks/Core.SpecificationEF/Core.SpecificationEF.csproj" />
+    <Project Path="src/BuildingBlocks/Core.Application/Core.Application.csproj" />
+    <Project Path="src/BuildingBlocks/Core.Persistence/Core.Persistence.csproj" />
+    <Project Path="src/BuildingBlocks/Core.Infrastructure/Core.Infrastructure.csproj" />
+    <Project Path="src/BuildingBlocks/Core.Presentation/Core.Presentation.csproj" />
+  </Folder>
+  <Folder Name="/src/Services/" />
+  <Folder Name="/src/Services/Ordering/">
+    <Project Path="src/Services/Ordering/ShipFlow.Ordering.Api/ShipFlow.Ordering.Api.csproj" />
+    <Project Path="src/Services/Ordering/ShipFlow.Ordering.Application/ShipFlow.Ordering.Application.csproj" />
+    <Project Path="src/Services/Ordering/ShipFlow.Ordering.Contracts/ShipFlow.Ordering.Contracts.csproj" />
+    <Project Path="src/Services/Ordering/ShipFlow.Ordering.Domain/ShipFlow.Ordering.Domain.csproj" />
+    <Project Path="src/Services/Ordering/ShipFlow.Ordering.Infrastructure/ShipFlow.Ordering.Infrastructure.csproj" />
+    <Project Path="src/Services/Ordering/ShipFlow.Ordering.Persistence/ShipFlow.Ordering.Persistence.csproj" />
+    <Project Path="src/Services/Ordering/ShipFlow.Ordering.Presentation/ShipFlow.Ordering.Presentation.csproj" />
+  </Folder>
+  <Folder Name="/tests/" />
+  <Folder Name="/tests/BuildingBlocks/">
+    <Project Path="tests/BuildingBlocks/Core.Tests/Core.Tests.csproj" />
+  </Folder>
+  <Folder Name="/tests/Services/" />
+  <Folder Name="/tests/Services/Ordering/">
+    <Project Path="tests/Services/Ordering/ShipFlow.Ordering.Domain.Tests/ShipFlow.Ordering.Domain.Tests.csproj" />
+    <Project Path="tests/Services/Ordering/ShipFlow.Ordering.Application.Tests/ShipFlow.Ordering.Application.Tests.csproj" />
+    <Project Path="tests/Services/Ordering/ShipFlow.Ordering.Api.IntegrationTests/ShipFlow.Ordering.Api.IntegrationTests.csproj" />
+  </Folder>
+  <Folder Name="/tests/Aspire/">
     <Project Path="tests/ShipFlow.ServiceDefaults.Tests/ShipFlow.ServiceDefaults.Tests.csproj" />
   </Folder>
 </Solution>

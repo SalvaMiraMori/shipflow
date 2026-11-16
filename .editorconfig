@@ -29,6 +29,15 @@ csharp_style_expression_bodied_properties = true:suggestion
 csharp_prefer_braces = true:warning
 csharp_style_prefer_primary_constructors = true:suggestion
 
+# Naming: constants PascalCase (more specific than the private-field rule below, so it wins for `private const`)
+dotnet_naming_rule.constants_pascal.symbols = constant_fields
+dotnet_naming_rule.constants_pascal.style = pascal_case_style
+dotnet_naming_rule.constants_pascal.severity = warning
+dotnet_naming_symbols.constant_fields.applicable_kinds = field
+dotnet_naming_symbols.constant_fields.applicable_accessibilities = *
+dotnet_naming_symbols.constant_fields.required_modifiers = const
+dotnet_naming_style.pascal_case_style.capitalization = pascal_case
+
 # Naming: private fields _camelCase
 dotnet_naming_rule.private_fields_underscore.symbols = private_fields
 dotnet_naming_rule.private_fields_underscore.style = underscore_camel
@@ -53,3 +62,11 @@ dotnet_diagnostic.CA2007.severity = none
 [tests/**.cs]
 # Test method names use underscores: Method_State_Expected
 dotnet_diagnostic.CA1707.severity = none
+
+[src/BuildingBlocks/Core.Specification*/**.cs]
+# Vendored fork of Ardalis.Specification: keep upstream style so diffs against upstream stay small.
+csharp_prefer_braces = true:silent
+csharp_style_namespace_declarations = file_scoped:silent
+dotnet_naming_rule.private_fields_underscore.severity = none
+dotnet_naming_rule.constants_pascal.severity = none
+dotnet_diagnostic.CA2016.severity = suggestion

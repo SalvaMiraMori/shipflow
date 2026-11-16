@@ -1,0 +1,6 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!-- Public HTTP contracts (request/response DTOs). No dependencies, so the Gateway, tests or a typed client can
+       reference it without pulling in the domain. Integration event contracts are added here in Phase 3. -->
+
+</Project>

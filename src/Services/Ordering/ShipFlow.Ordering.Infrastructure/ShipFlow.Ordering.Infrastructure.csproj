@@ -1,0 +1,11 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!-- External concerns that are not the database: current user, CORS, HTTP clients (carriers, payment) in later phases.
+       EcoGreen spells this layer "Infraestructure"; ShipFlow uses the English spelling. -->
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\BuildingBlocks\Core.Infrastructure\Core.Infrastructure.csproj" />
+    <ProjectReference Include="..\ShipFlow.Ordering.Application\ShipFlow.Ordering.Application.csproj" />
+  </ItemGroup>
+
+</Project>

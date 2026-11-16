@@ -5,10 +5,12 @@
     <UserSecretsId>shipflow-apphost-6f1d2c3a</UserSecretsId>
   </PropertyGroup>
 
-  <!-- Service projects are added here from Phase 1 onwards, e.g.:
   <ItemGroup>
-    <ProjectReference Include="..\Services\Ordering\Ordering.Api\Ordering.Api.csproj" />
+    <PackageReference Include="Aspire.Hosting.SqlServer" />
   </ItemGroup>
-  -->
+
+  <ItemGroup>
+    <ProjectReference Include="..\Services\Ordering\ShipFlow.Ordering.Api\ShipFlow.Ordering.Api.csproj" />
+  </ItemGroup>
 
 </Project>
